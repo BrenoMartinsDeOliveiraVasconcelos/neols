@@ -30,8 +30,8 @@ All your files and folders are presented as a tree in the file explorer. You can
  This argument defines how many characters will be used for spacing. Default is 19.
  Example:
  
-   `python3 list.py . --chars 15` 
-   ![--chars](https://i.imgur.com/LTNi5QD.png)
+    python3 list.py . --chars 15 
+  ![--chars](https://i.imgur.com/LTNi5QD.png)
    ### unit
   Change the unit of the size column. Measured in how big the unit is from 1 to infinite. Default is 2 (kilobit).
   
@@ -42,6 +42,7 @@ All your files and folders are presented as a tree in the file explorer. You can
 | 3 | mb |
 | 4 | gb |
 | 5 | tb |
+
 Example:
 
     python3 list.py . --unit 3
