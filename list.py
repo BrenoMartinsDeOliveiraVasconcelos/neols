@@ -244,7 +244,7 @@ if __name__ == '__main__':
     parser.add_argument("path", help="Path", type=str, default=".")
     parser.add_argument("--chars", "-c", help="Number of chars for spacing", type=int, default=0)
     parser.add_argument("--unit", "-u", help="Storage unit in how big the unit is (bit is 1, kilobit is 2 etc.)", type=int, default=2)
-    parser.add_argument("--real", "-r", help="Show the real size of directories? WILL be slower. (true or false)", type=bool, default=False)
+    parser.add_argument("--real", "-r", help="Show the real size of directories? WILL be slower. (true or false)", action=argparse.BooleanOptionalAction)
 
 
     args = parser.parse_args()

@@ -49,8 +49,8 @@ Example:
     python3 list.py . --unit 3
 ![--unit](https://i.imgur.com/PbQy3nW.png)
 ### real
-Toggle showing the real size of a directory (instead of the inode file size). Depending of the folder, this can significantly slow the program. Default is false.
+Toggle showing the real size of a directory (instead of the inode file size). Depending of the folder, this can significantly slow the program..
 Exemple:
 
-    python3 list.py . --real true
+    python3 list.py . --real
 ![--real](https://i.imgur.com/lcMMJ2e.png)
