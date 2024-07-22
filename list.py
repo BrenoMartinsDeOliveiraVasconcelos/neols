@@ -79,13 +79,22 @@ def get_permission(path: str) -> str:
         return "---"
 
 
+# args.chars dynamical
+def get_dyanmic_chars() -> int:
+    term_x = os.get_terminal_size().columns
+    return int(term_x / 4)
+
+
 # Get the spacing value
 def get_spacing(initial: int, subs: int) -> int:
     if initial >= 10:
         return initial - subs
     else:
-        print("Too small, try a 'char' larger than 10!")
-        exit(1)
+        if initial >= 1:
+            print("Too small, try a 'char' larger than 10!")
+            exit(1)
+        elif initial == 0:
+            return get_dyanmic_chars()- subs
 
 
 # Gets the unit of measurement
@@ -110,8 +119,15 @@ def get_unit() -> str:
 # Gets the cutten text of a string
 def get_cutstr(name: str) -> str:
     global args
+    
+    value = 0
 
-    return name[0:(int(args.chars/1.25))-1] + "..." if len(name) > args.chars / 1.25 else name
+    if args.chars >= 1:
+        value = args.chars
+    elif args.chars == 0:
+        value = get_dyanmic_chars()
+    
+    return name[0:(int(value/1.25))-1] + "..." if len(name) > value / 1.25 else name
 
 
 
@@ -226,7 +242,7 @@ if __name__ == '__main__':
     # Args
     parser = argparse.ArgumentParser(prog="list", description="A simpler version of ls")
     parser.add_argument("path", help="Path", type=str, default=".")
-    parser.add_argument("--chars", "-c", help="Number of chars for spacing", type=int, default=19)
+    parser.add_argument("--chars", "-c", help="Number of chars for spacing", type=int, default=0)
     parser.add_argument("--unit", "-u", help="Storage unit in how big the unit is (bit is 1, kilobit is 2 etc.)", type=int, default=2)
     parser.add_argument("--real", "-r", help="Show the real size of directories? WILL be slower. (true or false)", type=bool, default=False)
 

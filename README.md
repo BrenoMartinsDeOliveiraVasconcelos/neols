@@ -27,7 +27,8 @@ All your files and folders are presented as a tree in the file explorer. You can
  ### path
  Path of the folder. Exemple: `python3 list.py /usr/bin`
  ### chars
- This argument defines how many characters will be used for spacing. Default is 19.
+ This argument defines how many characters will be used for spacing. Default is 0.
+ Defining it as '0' makes the program define that value dynamically.
  Example:
  
     python3 list.py . --chars 15 
