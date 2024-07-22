@@ -225,9 +225,9 @@ def main(path: str) -> int:
 if __name__ == '__main__':
     # Args
     parser = argparse.ArgumentParser(prog="list", description="A simpler version of ls")
-    parser.add_argument("path", help="Path to check contents", type=str, default=".")
-    parser.add_argument("--chars", "-c", help="Number of chars of spacing", type=int, default=19)
-    parser.add_argument("--unit", "-u", help="Unit of measurement in how big the unit is (bit is 1, kilobit is 2 etc.)", type=int, default=2)
+    parser.add_argument("path", help="Path", type=str, default=".")
+    parser.add_argument("--chars", "-c", help="Number of chars for spacing", type=int, default=19)
+    parser.add_argument("--unit", "-u", help="Storage unit in how big the unit is (bit is 1, kilobit is 2 etc.)", type=int, default=2)
     parser.add_argument("--real", "-r", help="Show the real size of directories? WILL be slower. (true or false)", type=bool, default=False)
 
 
